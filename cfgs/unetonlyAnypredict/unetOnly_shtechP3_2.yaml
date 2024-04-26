@@ -1,0 +1,64 @@
+model_paras:
+  # UNet
+  features_root: 32
+  tot_raw_num: 5
+  tot_of_num: 5
+  border_mode: predict
+  rawRange: null
+  useFlow: True
+  padding: False
+  useCluster: True
+  clip_predict: 3
+  #useFrame: True
+
+# n_cluster: 8
+#  final_act: False
+#  nf_max: 128
+#  nf_start: 64
+#  spatial_size: 32
+#  dropout_prob: 0.1
+#  img_channels: 3
+#  motion_channels: 2
+#  clip_hist: 4
+clip_pred: 3
+#  num_flows: 4
+#  finetune: True
+
+device: cuda:0
+dataset_base_dir: /data/dongliang/datasets/VAD
+dataset_name: shanghaitech
+exp_name: shtech_unetOnly_P3_2
+ckpt_root: /data/dongliang/savedmodels/interpretableVAD/ckpt
+log_root: /data/dongliang/savedmodels/interpretableVAD/log
+eval_root: /data/dongliang/savedmodels/interpretableVAD/eval
+
+pretrained: null #./ckpt/ped2_unetOnly/best.pth
+model_savename: model.pth
+# num of iterations to log
+logevery: 100
+
+# num of epoch to save models
+saveevery: 1
+
+# training setting
+num_epochs: 100
+batchsize: 2048
+lr: 0.0001
+num_workers: 0
+# alpha for gradient loss
+alpha: 1
+# use L1 or L2 recon loss
+intensity_loss_norm: 2
+# lambda for frame intensity loss
+lam_frame: 1.0
+## lambda for kl loss
+#lam_kl: 1.0
+# lambda for gradient loss
+lam_grad: 1.0
+## lambda for memory sparsity loss
+#lam_sparse: 0.0002
+## lambda for flow recon. loss
+#lam_recon: 1.0
+
+w_r: 1.0
+w_p: 1.0

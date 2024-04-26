@@ -1,0 +1,3 @@
+# ninja log v5
+0	16146	1654984175675566369	/home/dongliang/PHD/research/code/hf2vad-master/pre_process/flownet_networks/resample2d_package/build/temp.linux-x86_64-3.8/resample2d_cuda.o	48c28aa2610c7926
+0	18106	1654984177631551410	/home/dongliang/PHD/research/code/hf2vad-master/pre_process/flownet_networks/resample2d_package/build/temp.linux-x86_64-3.8/resample2d_kernel.o	5c42c82157297f6

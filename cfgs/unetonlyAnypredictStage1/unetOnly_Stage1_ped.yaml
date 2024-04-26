@@ -1,0 +1,74 @@
+model_paras:
+  # UNet
+  features_root: 32
+  tot_raw_num: 5
+  tot_of_num: 5
+  border_mode: predict
+  rawRange: null
+  useFlow: True
+  padding: False
+  useCluster: True
+  clip_predict: 2
+
+#  final_act: False
+#  nf_max: 128
+#  nf_start: 64
+#  spatial_size: 32
+#  dropout_prob: 0.1
+#  img_channels: 3
+#  motion_channels: 2
+#  clip_hist: 4
+clip_pred: 2
+#  num_flows: 4
+#  finetune: True
+loss_invariance_weight: 1.0
+
+device: cuda:0
+dataset_base_dir: /data/dongliang/datasets/VAD/UCSDped
+dataset_name: ped2
+exp_name: ped_crossdomain_AnypredictStage1_all
+ckpt_root: /data/dongliang/savedmodels/interpretableVAD/ckpt
+log_root: /data/dongliang/savedmodels/interpretableVAD/log
+eval_root: /data/dongliang/savedmodels/interpretableVAD/eval
+
+
+crossdomain_dataset_base_dir: ["/data/dongliang/datasets/VAD", "/data/dongliang/datasets/VAD/Avenue19"]
+crossdomain_dataset_name: ["shanghaitech", "avenue"]
+
+pretrained: null #./ckpt/ped2_unetOnly/best.pth
+model_savename: model.pth
+# num of iterations to log
+logevery: 100
+
+# num of epoch to save models
+saveevery: 1
+
+# training setting
+num_epochs: 200
+batchsize: 1024
+lr: 0.0001
+num_workers: 0
+# alpha for gradient loss
+alpha: 1
+# use L1 or L2 recon loss
+intensity_loss_norm: 2
+# lambda for frame intensity loss
+lam_frame: 1.0
+## lambda for kl loss
+#lam_kl: 1.0
+# lambda for gradient loss
+lam_grad: 1.0
+## lambda for memory sparsity loss
+#lam_sparse: 0.0002
+## lambda for flow recon. loss
+#lam_recon: 1.0
+
+# ped2
+w_r: 1.0
+w_p: 0.1
+
+# ave
+#w_r: 1.0
+#w_p: 1.0
+w_rs: [1.0, 1.0, 0.1]
+w_ps: [1.0, 0.1, 1.0]

@@ -1,0 +1,3 @@
+# ninja log v5
+0	16069	1654984196399407806	/home/dongliang/PHD/research/code/hf2vad-master/pre_process/flownet_networks/channelnorm_package/build/temp.linux-x86_64-3.8/channelnorm_kernel.o	19b858c8030ab998
+0	17221	1654984197543399050	/home/dongliang/PHD/research/code/hf2vad-master/pre_process/flownet_networks/channelnorm_package/build/temp.linux-x86_64-3.8/channelnorm_cuda.o	4f4e175ca0a044d4
