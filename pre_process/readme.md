@@ -5,7 +5,7 @@ Here we use the `ped2` dataset as example.
 
 Download the [video anomaly detection dataset](http://www.svcl.ucsd.edu/projects/anomaly/dataset.htm) and place it into 
 the `data` directory of this project. In order to evaluate the frame-level AUC, we provide the 
-frame labels of each test video in `data/ped2/ground_truth_demo/gt_label.json`. 
+frame labels of each test video in `/ground_truth_demo/gt_label.json`. 
 
 > For the Avenue and ShanghaiTech datasets, please check the last section in this page.   
 
